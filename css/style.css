@@ -190,7 +190,7 @@ header table {
     user-select: none
 }
 
-.insulin button:hover {
+.insulin button:hover, .insulin button:active {
     background: #cfecff;
     color: #006bb3
 }
