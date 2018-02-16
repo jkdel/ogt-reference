@@ -190,13 +190,20 @@ header table {
     user-select: none
 }
 
-.insulin button:hover, .insulin button:active {
+.insulin button:active {
     background: #cfecff;
     color: #006bb3
 }
 
 .insulin button:active,.insulin button:focus,.insulin button:hover {
     outline: 0
+}
+
+@media (hover: hover) {
+  .insulin button:hover {
+    background: #cfecff;
+    color: #006bb3
+  }
 }
 
 @media only screen and (max-width:599px) {
