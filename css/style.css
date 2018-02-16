@@ -77,7 +77,7 @@ a {
 }
 
 .invisible {
-    text-decoration-line: none;
+    text-decoration: none;
     font-weight: inherit;
     cursor: pointer;
     -webkit-touch-callout: none;
