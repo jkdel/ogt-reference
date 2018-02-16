@@ -1,0 +1,135 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>OGT Reference Provider</title>
+  <meta name="description" content="A simple Webapp providing references for insulin during OGT.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0069b4">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<a class="invisible" href="http://www.tiho-hannover.de/pferde">
+<header>
+  <table>
+    <tr>
+      <td class="logo-container">
+        <div class="logo"></div>
+      </td>
+      <td>
+        University of Veterinary Medicine Hannover, Foundation<br>
+        <span class="blue">Clinic for Horses</span>
+      </td>
+    </tr>
+  </table>
+</header>
+</a>
+<div class="banner">
+  <!-- <img src="images/banner_black.jpg" alt=""> -->
+</div>
+<section class="intro">
+  <h1>OGT Reference Provider</h1>
+  <h2>Background</h2>
+  <details>
+    <summary class="invisible">The <strong>Equine Metabolic Syndrome</strong> <strong>(EMS)</strong>
+    consists in a range of metabolic disorders predisposing horses and ponies
+    for laminitis.</summary> The term <strong>Insulin dysregulation</strong> describes an
+    exacerbated insulin response to orally available sugars and may therefore
+    involve incretin signalling. It is one of the central components of EMS
+    alongside with regional or generalized obesity.
+  </details>
+  <p>
+    <strong>Insulin resistance</strong> results from a damaged response of
+    peripheral tissues to insulin and is asociated with insulin dysregulation. It
+    is however not present in every horse suffering from insulin dysregulation,
+    nor is every horse having an insulin resistance insulin dysregulated. This is
+    why diagnostical tests for EMS should not rely solely on insulin-sensitivity.
+  </p>
+  <p>
+    The <strong>Oral Glucose Test</strong> <strong>(OGT)</strong> consists in
+    the administration of 1 g glucose/kg bodyweight in 2L of water via
+    nasogastric tubing. Blood samples for insulin measurments are drawn prior to
+    the tubing and 120 min after it. In contrast to tests like the
+    <strong>Combined Glucose/Insulin Test</strong> <strong>(CGIT)</strong>, this
+    test has the advantages of being more practical to perform in a field
+    environnement and to activate <strong>incretin signaling</strong>. The
+    activation of incretin signaling is not achieved by intravenous glucose
+    infusion, this why <strong>the OGT is probably better suited to detect
+    insulin dysregulation</strong>, while the other tests are more relevant for
+    insulin sensitivity.
+  </p>
+  <p>
+    This Webapp is based on a <a href="#paper">paper</a> which tries to provide a
+    <strong>more consistent reference range for insulin</strong> during the OGT.
+    Further, by modelling the insulin answer of approximately 30 horses
+    considered healthy during the OGT, it is capable of <strong>alleviating the
+    requirements on timing</strong>. Actually, drawing the second blood sample
+    exactly 120 min after the tubing might not be achievable outside of a
+    hospital. This App provides a <strong>reference for insulin at any
+    time-point between 90 and 180 minutes</strong>. These references are
+    currently only available for insulin measured using the Mercodia Equine
+    Insulin ELISA.
+  </p>
+</section>
+<section class="insulin">
+  <h2>Check insulin status</h2>
+  <p>
+    Measured insulin was <input id="insulin" oninput="validateNumber(this);" placeholder="Insulin"> µIU/mL.
+    The sample was drawn <input id="time" oninput="validateTime(this);" value="120">
+    min after glucose administration. <button id="check" type="button" onclick="check()">Compare with reference!</button>
+  </p>
+  <p id="result"></p>
+</section>
+<section class="more">
+  <h2>More informations</h2>
+  <p>
+    Insulin dysregulation is a central part of the Equine Metabolic Syndrome and
+    can be detected using an Oral Glucose Test. However it might also occur in
+    horses affected by Pars Pituitary Intermedia Deficiency (PPID), formerly
+    known as Equine Cushing Syndrome. This is why horses that where found
+    positiv in the OGT and could possibly be affected by PPID (age, other
+    clinical signs) should also be tested, and if necessary treated, for this
+    disease.
+  </p>
+  <p>
+    The managment of patients with EMS mostly consists in an optimisation of
+    the diet and exercise. Energy intake has to be reduced gradually and adapted
+    to the horse's actual needs, which are sometimes difficult to evaluate for
+    the owner. Exercising of the horse is not limited to a more intense training
+    but also includes changes in the stables like access to a paddock, more
+    space for social interaction or putting obstacles in the paddock to make the
+    route from roughage to water more circuitous etc. More specific advices and
+    suggestions can be found in literatur.
+  </p>
+  <p id="paper">
+    For more details about the protocol recommended for use with this reference
+    values and the dataset used to suggest these references please read
+    following paper that was the starting point for writing this webapp:<br> <a
+    href="https://actavetscand.biomedcentral.com/articles/10.1186/s13028-018-0358-8">Warnken
+    T, Delarocque J, Schumacher S, Huber K, Feige K. Determination of reference
+    ranges for oral glucose test (OGT) performed with naso-gastric tubing in
+    horses. Acta Vet Scand. 2017.</a>
+  </p>
+  <p>
+    The webapp was written by Julien Delarocque and Tobias Warnken upon an
+    original idea from Tobias Warnken. It is provided without any warranty.
+    Hosting is provided by <a href="https://www.github.com">GitHub</a>.
+  </p>
+</section>
+<script>
+{% include script.min.js %}</script>
+<!--[if lt IE 9]><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+<script type="text/javascript" src="js/details-shim.min.js"></script>
+</body>
+</html>
