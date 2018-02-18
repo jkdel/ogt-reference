@@ -57,11 +57,15 @@ details.details_shim_open > summary:after, details[open] > summary:after {
   content: " [Click for less details]";
 }
 
-p, details {
+h3, ul, p, details {
     margin: 0 8%
 }
 
-p+p, p+details, details+p {
+details > p {
+    margin: 0
+}
+
+p+p, p+details, details+p, summary+p, p+h3, h3+p, ul+p, p+ul, h3+ul {
     padding-top: 20px
 }
 
