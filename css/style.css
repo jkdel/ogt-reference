@@ -241,8 +241,12 @@ header table {
         margin: 0 3% 20px
     }
 
-    p,details {
+    h3, ul, p, details {
         margin: 0 3%
+    }
+
+    details > p {
+        margin: 0
     }
 
     section {
@@ -290,8 +294,12 @@ header table {
         margin: 0 3% 20px
     }
 
-    p,details {
+    h3, ul, p, details {
         margin: 0 3%
+    }
+
+    details > p {
+        margin: 0
     }
 
     section {
