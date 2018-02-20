@@ -5,10 +5,10 @@ function check() {
   if (time >=90 && time <= 180) {
     if (insulin != 0) {
       cutoff=Math.round(9.515353+2.623057*time-0.04145439*time*time+0.0003201212*time*time*time-0.0000008373978*time*time*time*time);
-      if (insulin<=0.9*cutoff) {
+      if (insulin<=0.8*cutoff) {
         document.getElementById("result").innerHTML = "<strong>The insulin response to the standard dosed OGT is considered normal.</strong> Please remember that the proposed reference can only be considered valid when the protocol described in the paper this Webapp is based upon was followed and insulin was measured with Mercodia<sup>&reg;</sup> Equine Insulin ELISA.";
         document.getElementById("result").style.backgroundColor = "#d8f2d2";
-      } else if (insulin>1.1*cutoff) {
+      } else if (insulin>1.2*cutoff) {
         document.getElementById("result").innerHTML = "This level of insulin at the given time-point of the standard dosed OGT is considered to be <strong>indicative of insulin dysregulation</strong>. An optimization of the horse's management is highly recommended. See <a href='#suggested'>suggested reading</a>.";
         document.getElementById("result").style.backgroundColor = "#f7bbb9";
       } else {
