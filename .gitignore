@@ -1,8 +1,11 @@
-_site
-vendor
 Gemfile
 Gemfile.lock
+vendor
+_site
 .bundle
 .git
-dev
-Screenshot*.png
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+.Rhistory
+.RData

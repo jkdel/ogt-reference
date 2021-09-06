@@ -15,9 +15,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0069b4">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
 <a class="invisible" href="http://www.tiho-hannover.de/pferde">
@@ -42,28 +40,28 @@
   <h2>Background</h2>
   <details>
   <summary>
-    The <strong>Equine Metabolic Syndrome</strong> (<strong>EMS</strong>)
-    consists in a range of metabolic disorders predisposing horses and ponies
-    for laminitis. The term <strong>Insulin dysregulation</strong> describes an
+    The <strong>equine metabolic syndrome</strong> (<strong>EMS</strong>)
+    consists of a range of metabolic disorders predisposing horses and ponies
+    to laminitis. The term <strong>insulin dysregulation</strong> describes an
     exacerbated insulin response to oral carbohydrates and may therefore
-    involve incretin signaling. It is one of the central components of EMS
-    alongside with regional or generalized obesity.
+    involve incretin signalling. It is one of the central components of EMS
+    alongside regional or generalized obesity. 
   </summary>
   <p>
     <strong>Insulin resistance</strong> results from an altered response of
     peripheral tissues to insulin and is associated with insulin dysregulation.
-    It is however not present in every horse suffering from insulin
-    dysregulation. This is why diagnostic tests for EMS should not rely solely
-    on insulin-sensitivity.
+    However, not every horse suffering from insulin dysregulation is insulin
+    resistant. Therefore, diagnostic tests for EMS should not rely solely on
+    insulin sensitivity.
   </p>
   <p>
-    Protocol for the <strong>Oral Glucose Test</strong> (<strong>OGT</strong>):
+    Protocol for the <strong>oral glucose test</strong> (<strong>OGT</strong>):
   </p>
   <ol>
     <li>Let the horse fast overnight.</li>
     <li>Collect a basal blood sample.</li>
     <li>
-      Administer 1 g glucose/kg bodyweight in 2L of water via naso-gastric
+      Administer 1 g glucose/kg bodyweight in 2L of water via nasogastric
       tubing.
     </li>
     <li>
@@ -72,35 +70,28 @@
     </li>
     <li>
       Analyze the samples for glucose and insulin. The latter should be measured
-      using the Mercodia<sup>&reg;</sup> Equine Insulin ELISA to ensure a valid
-      diagnosis based on the here provided reference range.
+      using the Mercodia<sup>&reg;</sup> Equine Insulin ELISA to ensure the
+      obtention of a valid diagnosis based on the here provided reference range.
     </li>
   </ol>
   <p>
-    In contrast to tests like the <strong>Combined Glucose/Insulin Test</strong>
-    (<strong>CGIT</strong>), this test has the advantages of being more
+    In contrast to tests like the <strong>combined glucose/insulin test</strong>
+    (<strong>CGIT</strong>), this test has the advantage of being more
     practical to perform in a field environment and to assess postprandial
-    hyperinsulinaemia under standardized conditions. Furthermore, enteral
-    glucose can activate <strong>incretin signaling</strong>. The activation of
-    incretin signaling is not achieved by intravenous glucose infusion, this why
-    <strong>the OGT is probably better suited to detect insulin
-    dysregulation</strong>, while the other tests are more relevant for insulin
-    resistance.
+    hyperinsulinaemia under standardized conditions. Furthermore, in contrast to
+    intravenous glucose infusion, enteral glucose can activate
+    <strong>incretin</strong> signalling. Therefore, <strong>the OGT is better
+    suited to detect insulin dysregulation</strong> than other test, while the
+    other tests are more relevant for insulin resistance.
   </p>
   <p>
-    This Webapp is based on a <a href="#paper">paper</a> which tries to provide
+    This web app is derived from a <a href="#paper">paper</a> that tries to provide
     a <strong>more consistent reference range for insulin</strong> during the
-    OGT. Further, by modelling the insulin responses of approximately 30 horses
-    considered healthy during the OGT, it is capable of <strong>alleviating the
-    requirements on timing</strong>. Actually, drawing the second blood sample
-    exactly 120 min after the tubing might not be achievable under practical
-    settings outside of a hospital. This App provides a <strong>dynamic
-    reference range for insulin at any time-point between 90 and 180 minutes</strong>.
-    <strong>These references are currently only available for insulin measured
-    using the Mercodia<sup>&reg;</sup> Equine Insulin ELISA</strong>. However,
-    we are currently working on further dynamic reference ranges for a broader
-    selection of immunoassays used for quantification of equine insulin as the
-    Mercodia<sup>&reg;</sup> Equine Insulin ELISA is not widely used yet. If you
+    OGT. In addition, it <strong>alleviates the requirements on timing</strong> by
+    providing a <strong>dynamic reference range for insulin at any time-point
+    between 90 and 180 minutes</strong>, instead of 120 min only.
+    <strong>The reference range is currently only available for insulin measured
+    using the Mercodia<sup>&reg;</sup> Equine Insulin ELISA</strong>. If you
     struggle finding a laboratory using this assay you can contact our <a
     href="https://www.tiho-hannover.de/kliniken-institute/kliniken/klinik-fuer-rinder/labore/endokrinologisches-labor">partner
     laboratory</a>.
@@ -110,33 +101,45 @@
 <section class="insulin">
   <h2>Check insulin status</h2>
   <p>
-    Measured insulin was <input id="insulin" oninput="validateNumber(this);" placeholder="Insulin"> µIU/mL.
+    The measured insulin was <input id="insulin" oninput="validateNumber(this);" placeholder="Insulin"> µIU/mL.
     The sample was drawn <input id="time" oninput="validateTime(this);" value="120">
     min after glucose administration. <button id="check" type="button" onclick="check()">Compare with reference!</button>
   </p>
   <p id="result"></p>
 </section>
 <section class="more">
-  <h2>More informations</h2>
+  <h2>More information</h2>
+    <a class="invisible" href="https://www.equine-insulin-converter.org/">
+    <table id="eic-teaser">
+    <tr>
+      <td class="teaser-container"></td>
+      <td class="teaser-text">
+        Discover our new app, the <strong>Equine Insulin Converter</strong> and
+        compare your insulin measurements with cut-offs and reference ranges obtained
+        using other assays!
+      </td>
+    </tr>
+  </table>
+  </a>
   <p>
     <strong>Insulin dysregulation</strong> is a central part of the
-    <strong>Equine Metabolic Syndrome</strong> and can be detected using OGT.
-    However, it might also occur in horses affected by <strong>Pars Pituitary
-    Intermedia Deficiency</strong> (<strong>PPID</strong>), formerly known as
-    <strong>Equine Cushing Syndrome</strong>. This is why horses that where
-    found positive in the OGT and could possibly be affected by PPID (age, other
+    <strong>equine metabolic syndrome</strong> and can be detected using the OGT.
+    However, it might also occur in horses affected by <strong>pituitary pars
+    intermedia dysfunction</strong> (<strong>PPID</strong>), formerly known as
+    <strong>equine Cushing syndrome</strong>. This is why horses that were
+    found positive in the OGT and could be affected by PPID (age, other
     clinical signs) should also be tested (e.g. by <strong>TRH stimulation
     test</strong>), and if necessary treated, for this disease.
   </p>
   <p>
-    The management of patients with EMS mostly consists in an
+    The management of patients with EMS mostly consists of an
     <strong>optimization of the diet and exercise</strong>. Energy intake has to
     be reduced gradually and adapted to the horse's actual needs, which are
     sometimes difficult to evaluate for the owner. Exercise is
-    not limited to a more intense training but also includes changes in the
+    not limited to more intense training but also includes changes in the
     stables like access to a paddock, more space for social interaction or
     putting obstacles in the paddock to make the route from roughage to water
-    circuitous etc. More specific advices and suggestions can be found in
+    circuitous etc. Specific advice and suggestions can be found in the
     literature.
   </p>
   <h3 id="suggested">Suggested readings:</h3>
@@ -159,8 +162,8 @@
     </li>
   </ul>
   <p id="paper">
-    For more details about the protocol recommended for use with this reference
-    values please read following paper:<br>
+    For more details about the protocol recommended for use with these reference
+    values please read following the paper:<br>
     <a href="http://dx.doi.org/10.1186/s13028-018-0358-8">Warnken T, Delarocque
     J, Schumacher S, Huber K, Feige K. Retrospective analysis of insulin
     responses to standard dosed oral glucose tests (OGTs) via naso-gastric
@@ -168,9 +171,9 @@
     Scandinavica 2018;60. doi:10.1186/s13028-018-0358-8.</a>
   </p>
   <p>
-    The webapp was written by Julien Delarocque upon an
-    original idea from Tobias Warnken. It is provided without any warranty.
-    Hosting is provided by <a href="https://www.github.com">GitHub</a>.
+    <a href="https://www.researchgate.net/profile/Julien_Delarocque">Julien
+    Delarocque</a> wrote this web app upon an original idea from
+    <a href="https://www.researchgate.net/profile/Tobias-Warnken">Tobias Warnken</a>.
   </p>
 </section>
 <script>

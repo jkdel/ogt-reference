@@ -6,13 +6,13 @@ function check() {
     if (insulin != 0) {
       cutoff=Math.round(9.515353+2.623057*time-0.04145439*time*time+0.0003201212*time*time*time-0.0000008373978*time*time*time*time);
       if (insulin<=0.8*cutoff) {
-        document.getElementById("result").innerHTML = "<strong>The insulin response to the standard dosed OGT is considered normal.</strong> Please remember that the proposed reference can only be considered valid when the protocol described in the paper this Webapp is based upon was followed and insulin was measured with Mercodia<sup>&reg;</sup> Equine Insulin ELISA.";
+        document.getElementById("result").innerHTML = "This level of insulin response is <strong>considered normal</strong>. Please remember that the proposed reference range is only valid for the protocol described above and that any medical decision should take the clinical circumstances into account.";
         document.getElementById("result").style.backgroundColor = "#d8f2d2";
       } else if (insulin>1.2*cutoff) {
-        document.getElementById("result").innerHTML = "This level of insulin at the given time-point of the standard dosed OGT is considered to be <strong>indicative of insulin dysregulation</strong>. An optimization of the horse's management is highly recommended. See <a href='#suggested'>suggested reading</a>.";
+        document.getElementById("result").innerHTML = "The given values are <strong>indicative of insulin dysregulation</strong>. We recommend adapting the horse's management (see <a href='#suggested'>'Suggested readings'</a>). Please bear in mind that any medical decision should consider the clinical circumstances in addition to the laboratory measurements.";
         document.getElementById("result").style.backgroundColor = "#f7bbb9";
       } else {
-        document.getElementById("result").innerHTML = "A reliable diagnosis cannot be provided upon this value. It is considered to be in a <strong>grey zone</strong>. We suggest retesting the patient in a few weeks. As references are available for the range 90 to 180 min, it is of course possible to take more than one sample to augment the sensitivity of the OGT. This is especially recommended when insulin status is unclear.";
+        document.getElementById("result").innerHTML = "This value is <strong>intermediate</strong> and does not warrant a reliable diagnosis. We suggest retesting the patient in a few weeks and recommend taking more than one sample in the range of 90 to 180 min, to increase the sensitivity of the OGT. Please bear in mind that any medical decision should consider the clinical circumstances in addition to the laboratory measurements.";
         document.getElementById("result").style.backgroundColor = "#f7e9b9";
       }
     }
